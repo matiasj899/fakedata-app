@@ -1,0 +1,9 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+#Header-cn{
+    background-color: #B9D6F2;
+    height: 80px;
+}
