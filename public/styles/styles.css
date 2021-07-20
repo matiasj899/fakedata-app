@@ -63,6 +63,7 @@ h1, a, ul, p {
     width: 15%;
     text-align: center;
     border-right: 1px solid;
+    border-left: 1px solid;
 }
 
 #ListOfBooks-cn .books-cn h1 {
@@ -84,6 +85,7 @@ h1, a, ul, p {
     display: flex;
     align-items: center;
     width: 15%;
+    justify-content: center;
 }
 
 #ListOfBooks-cn .books-cn p {
