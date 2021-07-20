@@ -3,7 +3,101 @@
     padding: 0;
     margin: 0;
 }
-#Header-cn{
-    background-color: #B9D6F2;
+
+body {
+    background-color: #003559;
+}
+
+h1, a, ul, p {
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+}
+
+#Header-cn {
+    background-color: #061A40;
     height: 80px;
+}
+
+#Header-cn ul {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    height: 100%;
+    align-items: center;
+    list-style: none;
+}
+
+#Header-cn ul li {
+    margin: 10px;
+}
+
+#Header-cn ul li a {
+    text-decoration: none;
+}
+
+#ListOfBooks-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ListOfBooks-cn {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    background-color: #061A40;
+    justify-content: space-between;
+}
+
+#ListOfBooks-cn .staticList-cn ul {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    list-style-type: none;
+    padding: 10px;
+}
+
+#ListOfBooks-cn .staticList-cn ul li {
+    width: 15%;
+    text-align: center;
+    border-right: 1px solid;
+}
+
+#ListOfBooks-cn .books-cn h1 {
+    font-size: small;
+    text-align: center;
+    margin: 10px;
+}
+
+#ListOfBooks-cn .books-cn {
+    background-color: #B9D6F2;
+    padding: 10px;
+    display: flex;
+    border: 1px solid;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#ListOfBooks-cn .books-cn .img-and-title {
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+#ListOfBooks-cn .books-cn p {
+    color: black;
+    font-size: small;
+    width: 15%;
+    text-align: center;
+}
+
+#ListOfBooks-cn .books-cn .img-and-title h1 {
+    color: black;
+}
+
+#ListOfBooks-cn .books-cn img {
+    width: 50px;
+    color: black;
 }
