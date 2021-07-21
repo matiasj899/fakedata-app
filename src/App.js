@@ -4,7 +4,7 @@ import Books from "./pages/books/Books";
 import Users from "./pages/users/Users";
 import Home from "./pages/home/Home";
 
-function App() {
+function App(props) {
   return (
     <Router>
       <Switch>
@@ -12,7 +12,7 @@ function App() {
           <Home></Home>
         </Route>
         <Route exact path="/books">
-          <Books></Books>
+          <Books ></Books>
         </Route>
         <Route exact path="/users">
           <Users></Users>

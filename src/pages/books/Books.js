@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import clienteAxios from "../../config/axios";
 import Header from "../../components/Header";
 import ListOfBooks from "./ListOfBooks";
-const Books = () => {
+const Books = ({props}) => {
+  console.log(props)
   const value = 100;
   const limit = value / 10 - 1;
   let limitArray = [];
@@ -23,9 +24,9 @@ const Books = () => {
   useEffect(() => {
     getBooks();
   }, []);
-function changePageByNumber(e){
-  setCurrentPage(e.target.value)
-}
+  function changePageByNumber(e) {
+    setCurrentPage(Number(e.target.value));
+  }
   function prevPage() {
     setCurrentPage(currentPage - 1);
   }
@@ -41,12 +42,10 @@ function changePageByNumber(e){
     const end = start + 10;
     page = books.slice(start, end);
   }
-
+  console.log(currentPage);
   const listOfBooks = page.map((book) => (
     <ListOfBooks key={book.isbn} book={book}></ListOfBooks>
   ));
-  
-  
 
   return (
     <>
@@ -68,15 +67,29 @@ function changePageByNumber(e){
           </div>
           {listOfBooks}
         </div>
-        <div id='buttons-cn'>
-          {currentPage === 0 ? null : (
-            <button className='next-and-prev-btn' onClick={prevPage}>Prev page</button>
+        <div id="buttons-cn">
+          {currentPage === 0  ? null : (
+            <button className="next-and-prev-btn" onClick={prevPage}>
+              Prev page
+            </button>
           )}
-         {limitArray.map(eachNumber=>(<button className='number-btn' key={eachNumber} value={eachNumber} onClick={changePageByNumber}>{eachNumber}</button>))}
+          {limitArray.map((eachNumber) => {
+            return (
+              <button
+                className="number-btn"
+                key={eachNumber}
+                value={Number(eachNumber + 1)}
+                onClick={changePageByNumber}
+              >
+                {eachNumber + 1}
+              </button>
+            );
+          })}
           {currentPage === limit ? null : (
-            <button className='next-and-prev-btn' onClick={nextPage}>Next page</button>
+            <button className="next-and-prev-btn" onClick={nextPage}>
+              Next page
+            </button>
           )}
-           
         </div>
       </div>
     </>
