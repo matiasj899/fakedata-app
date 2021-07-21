@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Books from "./pages/books/Books";
 import Users from "./pages/users/Users";
 import Home from "./pages/home/Home";
@@ -12,7 +12,7 @@ function App(props) {
           <Home></Home>
         </Route>
         <Route exact path="/books">
-          <Books ></Books>
+          <Books></Books>
         </Route>
         <Route exact path="/users">
           <Users></Users>

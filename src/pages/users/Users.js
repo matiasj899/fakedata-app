@@ -3,7 +3,9 @@ import Header from "../../components/Header";
 import clienteAxios from "../../config/axios";
 import ListOfBooks from "../books/ListOfBooks";
 const Users = () => {
-  const value=100
+  const value = 100;
+  const limit = value / 10 - 1;
+  let limitArray = [];
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const getUsers = () => {
@@ -19,11 +21,18 @@ const Users = () => {
   useEffect(() => {
     getUsers();
   }, []);
+  function changePageByNumber(e) {
+    setCurrentPage(Number(e.target.value));
+  }
+  
   function prevPage() {
     setCurrentPage(currentPage - 1);
   }
   function nextPage() {
     setCurrentPage(currentPage + 1);
+  }
+  for (let index = 0; index < limit; index++) {
+    limitArray.push(index);
   }
   let page = users.slice(0, 10);
   if (currentPage > 0) {
@@ -52,10 +61,31 @@ const Users = () => {
               <li>Ip</li>
             </ul>
           </div>
-          {listOfBooks}</div>
-        <div>
-          <button onClick={prevPage}>Anterior pagina</button>
-          <button onClick={nextPage}>Siguiente pagina</button>
+          {listOfBooks}
+          </div>
+          <div id="buttons-cn">
+          {currentPage === 0  ? null : (
+            <button className="next-and-prev-btn" onClick={prevPage}>
+              Prev page
+            </button>
+          )}
+          {limitArray.map((eachNumber) => {
+            return (
+              <button
+                className="number-btn"
+                key={eachNumber}
+                value={Number(eachNumber + 1)}
+                onClick={changePageByNumber}
+              >
+                {eachNumber + 1}
+              </button>
+            );
+          })}
+          {currentPage === limit ? null : (
+            <button className="next-and-prev-btn" onClick={nextPage}>
+              Next page
+            </button>
+          )}
         </div>
       </div>
     </div>

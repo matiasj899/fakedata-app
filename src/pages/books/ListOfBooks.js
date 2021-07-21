@@ -4,7 +4,7 @@ const ListOfBooks = ({ book }) => {
   return (
     <div className="books-cn">
       <div className="img-and-title">
-        <img src={book.image}></img>
+        <img src={book.image} alt={book.title || book.firstname}></img>
         <h1>{book.title || book.firstname + " " + book.lastname}</h1>
       </div>
       <p>{book.author || book.username}</p>

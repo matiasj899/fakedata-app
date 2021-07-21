@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import clienteAxios from "../../config/axios";
 import Header from "../../components/Header";
 import ListOfBooks from "./ListOfBooks";
-const Books = ({props}) => {
-  console.log(props)
+const Books = ({ props }) => {
+  console.log(props);
   const value = 100;
   const limit = value / 10 - 1;
   let limitArray = [];
@@ -68,7 +68,7 @@ const Books = ({props}) => {
           {listOfBooks}
         </div>
         <div id="buttons-cn">
-          {currentPage === 0  ? null : (
+          {currentPage === 0 ? null : (
             <button className="next-and-prev-btn" onClick={prevPage}>
               Prev page
             </button>

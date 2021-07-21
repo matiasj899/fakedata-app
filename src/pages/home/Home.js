@@ -8,12 +8,14 @@ const Home = () => {
       <div id="ListOfBooks-main">
         <h1>List of:</h1>
 
-        <ul>
-            <li><Link to='/books'>Books</Link></li>
-            <li><Link to='/users'>users</Link></li>
+        <ul className="home-ul">
+          <li className="home-li">
+            <Link to="/books">Books</Link>
+          </li>
+          <li className="home-li">
+            <Link to="/users">Users</Link>
+          </li>
         </ul>
-        
-        
       </div>
     </>
   );
