@@ -6,7 +6,10 @@ const Header = () => {
     <div id="Header-cn">
       <ul>
         <li>
-          <Link to="/">Books</Link>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/books">Books</Link>
         </li>
         <li>
           <Link to="/users">Users</Link>
