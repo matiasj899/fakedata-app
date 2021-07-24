@@ -12,7 +12,9 @@ h1, a, ul, p {
     font-family: 'Roboto', sans-serif;
     color: whitesmoke;
 }
-
+button{
+    cursor: pointer;
+}
 #Header-cn {
     background-color: #061A40;
     height: 80px;
@@ -40,6 +42,23 @@ h1, a, ul, p {
     flex-direction: column;
     align-items: center;
 }
+#ListOfBooks-main .home-ul{
+    width: 400px;
+    background-color: #B9D6F2;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    border-radius: 10px;
+}
+#ListOfBooks-main .home-ul .home-li a{
+    
+    color: black;
+    font-size: larger;
+    
+}
+
 
 #ListOfBooks-cn {
     display: flex;
@@ -102,4 +121,19 @@ h1, a, ul, p {
 #ListOfBooks-cn .books-cn img {
     width: 50px;
     color: black;
+}
+#buttons-cn, #ListOfBooks-main h1{
+    margin: 20px;
+}
+.next-and-prev-btn{
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.number-btn{
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px;
 }
