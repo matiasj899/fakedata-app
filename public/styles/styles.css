@@ -18,6 +18,12 @@ button{
 #Header-cn {
     background-color: #061A40;
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#home-cn{
+    margin: 10px;
 }
 
 #Header-cn ul {
@@ -51,6 +57,11 @@ button{
     list-style: none;
     align-items: center;
     border-radius: 10px;
+}
+#ListOfBooks-main .home-ul .home-li {
+    
+    margin: 20px;
+    
 }
 #ListOfBooks-main .home-ul .home-li a{
     

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import clienteAxios from "../../config/axios";
 import Header from "../../components/Header";
-import ListOfBooks from "./ListOfBooks";
+
+import ListOfData from "../../components/ListOfData";
 const Books = ({ props }) => {
-  console.log(props);
   const value = 100;
   const limit = value / 10 - 1;
   let limitArray = [];
@@ -14,7 +14,6 @@ const Books = ({ props }) => {
     clienteAxios
       .get(`books?_quantity=${value}`)
       .then((res) => {
-        console.log(res);
         setBooks(res.data.data);
       })
       .catch((error) => {
@@ -42,9 +41,9 @@ const Books = ({ props }) => {
     const end = start + 10;
     page = books.slice(start, end);
   }
-  console.log(currentPage);
-  const listOfBooks = page.map((book) => (
-    <ListOfBooks key={book.isbn} book={book}></ListOfBooks>
+
+  const listOfBooks = page.map((data) => (
+    <ListOfData key={data.isbn} data={data}></ListOfData>
   ));
 
   return (

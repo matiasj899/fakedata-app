@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import clienteAxios from "../../config/axios";
-import ListOfBooks from "../books/ListOfBooks";
+import ListOfData from "../../components/ListOfData";
 const Users = () => {
   const value = 100;
   const limit = value / 10 - 1;
@@ -24,7 +24,7 @@ const Users = () => {
   function changePageByNumber(e) {
     setCurrentPage(Number(e.target.value));
   }
-  
+
   function prevPage() {
     setCurrentPage(currentPage - 1);
   }
@@ -41,17 +41,17 @@ const Users = () => {
     page = users.slice(start, end);
   }
 
-  const listOfBooks = page.map((book) => (
-    <ListOfBooks key={book.isbn || book.uuid} book={book}></ListOfBooks>
+  const listOfUsers = page.map((data) => (
+    <ListOfData key={data.isbn || data.uuid} data={data}></ListOfData>
   ));
- console.log(users)
+
   return (
     <div>
       <Header></Header>
       <div id="ListOfBooks-main">
         <h1>List of users:</h1>
         <div id="ListOfBooks-cn">
-        <div className="staticList-cn">
+          <div className="staticList-cn">
             <ul>
               <li>Full name</li>
               <li>Username</li>
@@ -61,10 +61,10 @@ const Users = () => {
               <li>Ip</li>
             </ul>
           </div>
-          {listOfBooks}
-          </div>
-          <div id="buttons-cn">
-          {currentPage === 0  ? null : (
+          {listOfUsers}
+        </div>
+        <div id="buttons-cn">
+          {currentPage === 0 ? null : (
             <button className="next-and-prev-btn" onClick={prevPage}>
               Prev page
             </button>
